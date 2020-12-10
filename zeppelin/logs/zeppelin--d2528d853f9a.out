@@ -1,0 +1,31 @@
+ZEPPELIN_CLASSPATH: ::/zeppelin/lib/*:/zeppelin/*::/zeppelin/conf
+ WARN [2020-12-10 09:44:16,379] ({main} ZeppelinConfiguration.java[create]:161) - Failed to load configuration, proceeding with a default
+ INFO [2020-12-10 09:44:16,467] ({main} ZeppelinConfiguration.java[create]:173) - Server Host: 0.0.0.0
+ INFO [2020-12-10 09:44:16,471] ({main} ZeppelinConfiguration.java[create]:175) - Server Port: 8080
+ INFO [2020-12-10 09:44:16,472] ({main} ZeppelinConfiguration.java[create]:179) - Context Path: /
+ INFO [2020-12-10 09:44:16,473] ({main} ZeppelinConfiguration.java[create]:180) - Zeppelin Version: 0.9.0-preview2
+ INFO [2020-12-10 09:44:16,505] ({main} Log.java[initialized]:169) - Logging initialized @570ms to org.eclipse.jetty.util.log.Slf4jLog
+ WARN [2020-12-10 09:44:16,910] ({main} ZeppelinConfiguration.java[getConfigFSDir]:661) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir
+ WARN [2020-12-10 09:44:16,911] ({main} ZeppelinConfiguration.java[getConfigFSDir]:661) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir
+ WARN [2020-12-10 09:44:16,912] ({main} ZeppelinConfiguration.java[getConfigFSDir]:661) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir
+ WARN [2020-12-10 09:44:16,957] ({main} LocalConfigStorage.java[loadCredentials]:88) - Credential file /zeppelin/conf/credentials.json is not existed
+ INFO [2020-12-10 09:44:17,001] ({ImmediateThread-1607593456903} PluginManager.java[loadNotebookRepo]:78) - Loading NotebookRepo Plugin: org.apache.zeppelin.notebook.repo.GitNotebookRepo
+ INFO [2020-12-10 09:44:17,149] ({ImmediateThread-1607593456903} VFSNotebookRepo.java[setNotebookDirectory]:70) - Using notebookDir: /zeppelin/notebook
+ INFO [2020-12-10 09:44:17,206] ({main} ZeppelinServer.java[setupWebAppContext]:547) - warPath is: /zeppelin/zeppelin-web-0.9.0-preview2.war
+ INFO [2020-12-10 09:44:17,209] ({main} ZeppelinServer.java[setupWebAppContext]:560) - ZeppelinServer Webapp path: /zeppelin/webapps
+ INFO [2020-12-10 09:44:17,281] ({main} ZeppelinServer.java[setupWebAppContext]:547) - warPath is: /zeppelin/zeppelin-web-angular-0.9.0-preview2.war
+ INFO [2020-12-10 09:44:17,282] ({main} ZeppelinServer.java[setupWebAppContext]:560) - ZeppelinServer Webapp path: /zeppelin/webapps/next
+ INFO [2020-12-10 09:44:17,398] ({main} NotebookServer.java[<init>]:152) - NotebookServer instantiated: org.apache.zeppelin.socket.NotebookServer@2638011
+ INFO [2020-12-10 09:44:17,400] ({main} NotebookServer.java[setNotebook]:163) - Injected NotebookProvider
+ INFO [2020-12-10 09:44:17,404] ({main} NotebookServer.java[setServiceLocator]:157) - Injected ServiceLocator: ServiceLocatorImpl(shared-locator,0,1337344609)
+ INFO [2020-12-10 09:44:17,405] ({main} NotebookServer.java[setNotebookService]:170) - Injected NotebookServiceProvider
+ INFO [2020-12-10 09:44:17,406] ({main} NotebookServer.java[setAuthorizationServiceProvider]:177) - Injected NotebookAuthorizationServiceProvider
+ INFO [2020-12-10 09:44:17,407] ({main} NotebookServer.java[setConnectionManagerProvider]:183) - Injected ConnectionManagerProvider
+ INFO [2020-12-10 09:44:17,410] ({main} ZeppelinServer.java[setupClusterManagerServer]:447) - Cluster mode is disabled
+ INFO [2020-12-10 09:44:17,407] ({ImmediateThread-1607593456903} GitNotebookRepo.java[init]:77) - Opening a git repo at '/zeppelin/notebook'
+ INFO [2020-12-10 09:44:17,429] ({main} ZeppelinServer.java[main]:247) - Starting zeppelin server
+ INFO [2020-12-10 09:44:17,431] ({main} Server.java[doStart]:359) - jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_275-8u275-b01-0ubuntu1~16.04-b01
+ INFO [2020-12-10 09:44:17,728] ({main} StandardDescriptorProcessor.java[visitServlet]:276) - NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+ INFO [2020-12-10 09:44:17,745] ({main} DefaultSessionIdManager.java[doStart]:334) - DefaultSessionIdManager workerName=node0
+ INFO [2020-12-10 09:44:17,746] ({main} DefaultSessionIdManager.java[doStart]:339) - No SessionScavenger set, using defaults
+ INFO [2020-12-10 09:44:17,753] ({main} HouseKeeper.java[startScavenging]:140) - node0 Scavenging every 600000ms

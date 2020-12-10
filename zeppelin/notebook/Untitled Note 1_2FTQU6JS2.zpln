@@ -1,0 +1,230 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.log4j.{Level, Logger}\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.types.{IntegerType, LongType, StructType}",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-10 10:11:28.796",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.log4j.{Level, Logger}\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.types.{IntegerType, LongType, StructType}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607591196060_1502208799",
+      "id": "paragraph_1607591196060_1502208799",
+      "dateCreated": "2020-12-10 09:06:36.060",
+      "dateStarted": "2020-12-10 10:11:28.818",
+      "dateFinished": "2020-12-10 10:11:29.308",
+      "status": "FINISHED"
+    },
+    {
+      "text": "case class Movie(userID: Int, movieID: Int, rating: Int, timeStamp: Long)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-10 10:12:08.972",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Movie\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607595124635_1169106171",
+      "id": "paragraph_1607595124635_1169106171",
+      "dateCreated": "2020-12-10 10:12:04.635",
+      "dateStarted": "2020-12-10 10:12:08.996",
+      "dateFinished": "2020-12-10 10:12:10.052",
+      "status": "FINISHED"
+    },
+    {
+      "text": "Logger.getLogger(\"org\").setLevel(Level.ERROR)\n\nlazy val spark \u003d SparkSession.builder().appName(\"bla\").master(\"local[*]\").getOrCreate()\nimport spark.implicits._\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-10 10:13:51.748",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mspark\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m \u003d \u003clazy\u003e\nimport spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607592934008_263174152",
+      "id": "paragraph_1607592934008_263174152",
+      "dateCreated": "2020-12-10 09:35:34.009",
+      "dateStarted": "2020-12-10 10:13:51.765",
+      "dateFinished": "2020-12-10 10:13:53.208",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val moviesSchema \u003d new StructType()\nmoviesSchema.add(\"userID\", IntegerType, nullable \u003d true)\nmoviesSchema.add(\"movieID\", IntegerType, nullable \u003d true)\nmoviesSchema.add(\"rating\", IntegerType, nullable \u003d true)\n moviesSchema.add(\"timeStamp\", LongType, nullable \u003d true)",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-10 10:12:38.665",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmoviesSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType()\n\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(timeStamp,LongType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607595019525_1546517167",
+      "id": "paragraph_1607595019525_1546517167",
+      "dateCreated": "2020-12-10 10:10:19.544",
+      "dateStarted": "2020-12-10 10:12:38.690",
+      "dateFinished": "2020-12-10 10:12:39.555",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val ds \u003d spark.read.option(\"sep\", \"\\t\").schema(moviesSchema).csv(\"./data/ml-100k/u.data\").as[Movie]",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-10 10:14:10.419",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: cannot resolve \u0027`userID`\u0027 given input columns: [];\n  at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:143)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:140)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$2(TreeNode.scala:333)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:72)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:333)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:399)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:399)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChild$2(TreeNode.scala:368)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$4(TreeNode.scala:427)\n  at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)\n  at scala.collection.immutable.List.foreach(List.scala:392)\n  at scala.collection.TraversableLike.map(TraversableLike.scala:238)\n  at scala.collection.TraversableLike.map$(TraversableLike.scala:231)\n  at scala.collection.immutable.List.map(List.scala:298)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:427)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$transformExpressionsUp$1(QueryPlan.scala:106)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$1(QueryPlan.scala:118)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:72)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:118)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:129)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$4(QueryPlan.scala:139)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:139)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:106)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1(CheckAnalysis.scala:140)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1$adapted(CheckAnalysis.scala:92)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:177)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:92)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:89)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:130)\n  at org.apache.spark.sql.catalyst.encoders.ExpressionEncoder.resolveAndBind(ExpressionEncoder.scala:350)\n  at org.apache.spark.sql.Dataset.resolvedEnc$lzycompute(Dataset.scala:252)\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$resolvedEnc(Dataset.scala:251)\n  at org.apache.spark.sql.Dataset$.apply(Dataset.scala:83)\n  at org.apache.spark.sql.Dataset.as(Dataset.scala:475)\n  ... 48 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607595158683_433434729",
+      "id": "paragraph_1607595158683_433434729",
+      "dateCreated": "2020-12-10 10:12:38.684",
+      "dateStarted": "2020-12-10 10:14:10.441",
+      "dateFinished": "2020-12-10 10:14:11.414",
+      "status": "ERROR"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607595186485_115964938",
+      "id": "paragraph_1607595186485_115964938",
+      "dateCreated": "2020-12-10 10:13:06.485",
+      "status": "READY"
+    }
+  ],
+  "name": "Untitled Note 1",
+  "id": "2FTQU6JS2",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
