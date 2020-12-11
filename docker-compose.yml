@@ -1,9 +1,13 @@
 version: '3'
 
 services:
+
   spark-master-a:
     image: bde2020/spark-master:3.0.1-hadoop3.2
-    container_name: spark-master-a
+    container_name: spark-master-a      
+    volumes: 
+      - /spark
+      - ./zeppelin/notebook:/zeppelin/notebook 
     ports:
       - "8080:8080"
       - "7077:7077"
@@ -11,6 +15,8 @@ services:
       - INIT_DAEMON_STEP=setup_spark
     networks:
       - bla
+
+
 
   spark-worker-1-a:
     image: bde2020/spark-worker:3.0.1-hadoop3.2
@@ -24,6 +30,8 @@ services:
     networks:
       - bla
 
+
+
   zeppelin-spark: 
     image: apache/zeppelin:0.9.0
     container_name: zeppelin-spark
@@ -32,8 +40,9 @@ services:
     volumes: 
       - ./zeppelin/logs:/zeppelin/logs
       - ./zeppelin/notebook:/zeppelin/notebook
-      - ./zeppelin/data:/zeppelin/data
-      - ./spark-scripts:/spark
+      - ./zeppelin/data:/zeppelin/notebook/data
+    volumes_from: 
+      - spark-master-a:ro
     environment:
       - "SPARK_MASTER=spark://spark-master-a:7077"
       - "MASTER=spark://spark-master-a:7077"

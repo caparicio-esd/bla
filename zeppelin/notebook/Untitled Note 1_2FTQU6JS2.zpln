@@ -3,7 +3,7 @@
     {
       "text": "import org.apache.log4j.{Level, Logger}\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.types.{IntegerType, LongType, StructType}",
       "user": "anonymous",
-      "dateUpdated": "2020-12-10 10:11:28.796",
+      "dateUpdated": "2020-12-11 12:11:14.952",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -36,14 +36,14 @@
       "jobName": "paragraph_1607591196060_1502208799",
       "id": "paragraph_1607591196060_1502208799",
       "dateCreated": "2020-12-10 09:06:36.060",
-      "dateStarted": "2020-12-10 10:11:28.818",
-      "dateFinished": "2020-12-10 10:11:29.308",
+      "dateStarted": "2020-12-11 12:11:15.046",
+      "dateFinished": "2020-12-11 12:12:06.902",
       "status": "FINISHED"
     },
     {
       "text": "case class Movie(userID: Int, movieID: Int, rating: Int, timeStamp: Long)\n",
       "user": "anonymous",
-      "dateUpdated": "2020-12-10 10:12:08.972",
+      "dateUpdated": "2020-12-11 12:12:06.967",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -76,14 +76,14 @@
       "jobName": "paragraph_1607595124635_1169106171",
       "id": "paragraph_1607595124635_1169106171",
       "dateCreated": "2020-12-10 10:12:04.635",
-      "dateStarted": "2020-12-10 10:12:08.996",
-      "dateFinished": "2020-12-10 10:12:10.052",
+      "dateStarted": "2020-12-11 12:12:07.303",
+      "dateFinished": "2020-12-11 12:12:11.958",
       "status": "FINISHED"
     },
     {
-      "text": "Logger.getLogger(\"org\").setLevel(Level.ERROR)\n\nlazy val spark \u003d SparkSession.builder().appName(\"bla\").master(\"local[*]\").getOrCreate()\nimport spark.implicits._\n",
+      "text": "Logger.getLogger(\"org\").setLevel(Level.ERROR)\n\nlazy val spark \u003d SparkSession.builder().appName(\"bla\").master(\"spark://spark-master-a:7077]\").getOrCreate()\nimport spark.implicits._",
       "user": "anonymous",
-      "dateUpdated": "2020-12-10 10:13:51.748",
+      "dateUpdated": "2020-12-11 12:12:12.047",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -116,14 +116,14 @@
       "jobName": "paragraph_1607592934008_263174152",
       "id": "paragraph_1607592934008_263174152",
       "dateCreated": "2020-12-10 09:35:34.009",
-      "dateStarted": "2020-12-10 10:13:51.765",
-      "dateFinished": "2020-12-10 10:13:53.208",
+      "dateStarted": "2020-12-11 12:12:12.455",
+      "dateFinished": "2020-12-11 12:12:17.365",
       "status": "FINISHED"
     },
     {
-      "text": "val moviesSchema \u003d new StructType()\nmoviesSchema.add(\"userID\", IntegerType, nullable \u003d true)\nmoviesSchema.add(\"movieID\", IntegerType, nullable \u003d true)\nmoviesSchema.add(\"rating\", IntegerType, nullable \u003d true)\n moviesSchema.add(\"timeStamp\", LongType, nullable \u003d true)",
+      "text": "val moviesSchema \u003d new StructType().add(\"userID\", IntegerType, nullable \u003d true).add(\"movieID\", IntegerType, nullable \u003d true).add(\"rating\", IntegerType, nullable \u003d true).add(\"timeStamp\", LongType, nullable \u003d true)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-10 10:12:38.665",
+      "dateUpdated": "2020-12-11 12:12:17.445",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -146,7 +146,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mmoviesSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType()\n\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(timeStamp,LongType,true))\n"
+            "data": "\u001b[1m\u001b[34mmoviesSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(userID,IntegerType,true), StructField(movieID,IntegerType,true), StructField(rating,IntegerType,true), StructField(timeStamp,LongType,true))\n"
           }
         ]
       },
@@ -156,14 +156,54 @@
       "jobName": "paragraph_1607595019525_1546517167",
       "id": "paragraph_1607595019525_1546517167",
       "dateCreated": "2020-12-10 10:10:19.544",
-      "dateStarted": "2020-12-10 10:12:38.690",
-      "dateFinished": "2020-12-10 10:12:39.555",
+      "dateStarted": "2020-12-11 12:12:17.641",
+      "dateFinished": "2020-12-11 12:12:19.651",
       "status": "FINISHED"
     },
     {
-      "text": "val ds \u003d spark.read.option(\"sep\", \"\\t\").schema(moviesSchema).csv(\"./data/ml-100k/u.data\").as[Movie]",
+      "text": "val ds \u003d spark.read.option(\"sep\", \"\\t\").text(\"file:///zeppelin/data/book.txt\")",
       "user": "anonymous",
-      "dateUpdated": "2020-12-10 10:14:10.419",
+      "dateUpdated": "2020-12-11 12:15:18.522",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mds\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607595158683_433434729",
+      "id": "paragraph_1607595158683_433434729",
+      "dateCreated": "2020-12-10 10:12:38.684",
+      "dateStarted": "2020-12-11 12:15:18.564",
+      "dateFinished": "2020-12-11 12:15:19.056",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\ncat /data/book.txt",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:14:14.143",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -186,26 +226,53 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "org.apache.spark.sql.AnalysisException: cannot resolve \u0027`userID`\u0027 given input columns: [];\n  at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:143)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:140)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$2(TreeNode.scala:333)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:72)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:333)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:399)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:399)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUp$1(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChild$2(TreeNode.scala:368)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$4(TreeNode.scala:427)\n  at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)\n  at scala.collection.immutable.List.foreach(List.scala:392)\n  at scala.collection.TraversableLike.map(TraversableLike.scala:238)\n  at scala.collection.TraversableLike.map$(TraversableLike.scala:231)\n  at scala.collection.immutable.List.map(List.scala:298)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$mapChildren$1(TreeNode.scala:427)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:397)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:350)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:330)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$transformExpressionsUp$1(QueryPlan.scala:106)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$1(QueryPlan.scala:118)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:72)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:118)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.recursiveTransform$1(QueryPlan.scala:129)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.$anonfun$mapExpressions$4(QueryPlan.scala:139)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:237)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:139)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:106)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1(CheckAnalysis.scala:140)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$1$adapted(CheckAnalysis.scala:92)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:177)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:92)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:89)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:130)\n  at org.apache.spark.sql.catalyst.encoders.ExpressionEncoder.resolveAndBind(ExpressionEncoder.scala:350)\n  at org.apache.spark.sql.Dataset.resolvedEnc$lzycompute(Dataset.scala:252)\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$resolvedEnc(Dataset.scala:251)\n  at org.apache.spark.sql.Dataset$.apply(Dataset.scala:83)\n  at org.apache.spark.sql.Dataset.as(Dataset.scala:475)\n  ... 48 elided\n"
+            "data": "cat: /data/book.txt: No such file or directory\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
           }
         ]
       },
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1607595158683_433434729",
-      "id": "paragraph_1607595158683_433434729",
-      "dateCreated": "2020-12-10 10:12:38.684",
-      "dateStarted": "2020-12-10 10:14:10.441",
-      "dateFinished": "2020-12-10 10:14:11.414",
+      "jobName": "paragraph_1607685803333_120357073",
+      "id": "paragraph_1607685803333_120357073",
+      "dateCreated": "2020-12-11 11:23:23.333",
+      "dateStarted": "2020-12-11 12:14:14.180",
+      "dateFinished": "2020-12-11 12:14:14.269",
       "status": "ERROR"
     },
     {
+      "text": "ds.printSchema()",
       "user": "anonymous",
-      "config": {},
+      "dateUpdated": "2020-12-11 12:14:16.642",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- value: string (nullable \u003d true)\n\n"
+          }
+        ]
       },
       "apps": [],
       "runtimeInfos": {},
@@ -213,7 +280,166 @@
       "jobName": "paragraph_1607595186485_115964938",
       "id": "paragraph_1607595186485_115964938",
       "dateCreated": "2020-12-10 10:13:06.485",
-      "status": "READY"
+      "dateStarted": "2020-12-11 12:14:16.681",
+      "dateFinished": "2020-12-11 12:14:17.249",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ds.createOrReplaceTempView(\"data\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:14:18.902",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607637580670_1456790332",
+      "id": "paragraph_1607637580670_1456790332",
+      "dateCreated": "2020-12-10 21:59:40.670",
+      "dateStarted": "2020-12-11 12:14:18.938",
+      "dateFinished": "2020-12-11 12:14:22.621",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val teenagers \u003d spark.sql(\"\"\"\n       |SELECT * FROM data\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:14:24.655",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mteenagers\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607637738170_503929909",
+      "id": "paragraph_1607637738170_503929909",
+      "dateCreated": "2020-12-10 22:02:18.170",
+      "dateStarted": "2020-12-11 12:14:24.702",
+      "dateFinished": "2020-12-11 12:14:27.358",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val results \u003d teenagers.collect()\nresults.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:15:21.402",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 1.0 failed 4 times, most recent failure: Lost task 0.3 in stage 1.0 (TID 7, 192.168.0.4, executor 0): java.io.FileNotFoundException: File file:/zeppelin/data/book.txt does not exist\nIt is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running \u0027REFRESH TABLE tableName\u0027 command in SQL or by recreating the Dataset/DataFrame involved.\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:124)\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:169)\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:93)\n\tat scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)\n\tat org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:340)\n\tat org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:872)\n\tat org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:872)\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:127)\n\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n\nDriver stacktrace:\n  at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2059)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2008)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2007)\n  at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)\n  at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2007)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:973)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:973)\n  at scala.Option.foreach(Option.scala:407)\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:973)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2239)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2188)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2177)\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:775)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2099)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2120)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2139)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2164)\n  at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1004)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:388)\n  at org.apache.spark.rdd.RDD.collect(RDD.scala:1003)\n  at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:385)\n  at org.apache.spark.sql.Dataset.collectFromPlan(Dataset.scala:3627)\n  at org.apache.spark.sql.Dataset.$anonfun$collect$1(Dataset.scala:2940)\n  at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:3618)\n  at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:100)\n  at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:160)\n  at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:87)\n  at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:764)\n  at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)\n  at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3616)\n  at org.apache.spark.sql.Dataset.collect(Dataset.scala:2940)\n  ... 48 elided\nCaused by: java.io.FileNotFoundException: File file:/zeppelin/data/book.txt does not exist\nIt is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running \u0027REFRESH TABLE tableName\u0027 command in SQL or by recreating the Dataset/DataFrame involved.\n  at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:124)\n  at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:169)\n  at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:93)\n  at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)\n  at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:340)\n  at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:872)\n  at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:872)\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\n  at org.apache.spark.scheduler.Task.run(Task.scala:127)\n  at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)\n  at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)\n  ... 3 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://f2ec6c52316b:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607637793940_1047638501",
+      "id": "paragraph_1607637793940_1047638501",
+      "dateCreated": "2020-12-10 22:03:13.940",
+      "dateStarted": "2020-12-11 12:15:21.425",
+      "dateFinished": "2020-12-11 12:15:23.597",
+      "status": "ERROR"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:12:39.301",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607638072361_1005071306",
+      "id": "paragraph_1607638072361_1005071306",
+      "dateCreated": "2020-12-10 22:07:52.362",
+      "status": "FINISHED"
     }
   ],
   "name": "Untitled Note 1",
@@ -224,7 +450,11 @@
   "noteForms": {},
   "angularObjects": {},
   "config": {
-    "isZeppelinNotebookCronEnable": false
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
   },
-  "info": {}
+  "info": {
+    "isRunning": false
+  }
 }

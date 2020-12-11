@@ -1,0 +1,269 @@
+{
+  "paragraphs": [
+    {
+      "text": "val nums \u003d sc.parallelize(List(1, 2, 3, 4))\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:47:23.925",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mnums\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Int]\u001b[0m \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607688948912_1791218700",
+      "id": "paragraph_1607688948912_1791218700",
+      "dateCreated": "2020-12-11 12:15:48.914",
+      "dateStarted": "2020-12-11 12:47:23.992",
+      "dateFinished": "2020-12-11 12:48:23.101",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val a \u003d nums.map(x \u003d\u003e x*2)",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:48:40.490",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34ma\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Int]\u001b[0m \u003d MapPartitionsRDD[1] at map at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607689046857_1188277354",
+      "id": "paragraph_1607689046857_1188277354",
+      "dateCreated": "2020-12-11 12:17:26.858",
+      "dateStarted": "2020-12-11 12:48:40.539",
+      "dateFinished": "2020-12-11 12:48:41.291",
+      "status": "FINISHED"
+    },
+    {
+      "text": "a.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:48:43.740",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mArray[Int]\u001b[0m \u003d Array(2, 4, 6, 8)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://7e6f88d20c72:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607689102364_1267738087",
+      "id": "paragraph_1607689102364_1267738087",
+      "dateCreated": "2020-12-11 12:18:22.364",
+      "dateStarted": "2020-12-11 12:48:43.764",
+      "dateFinished": "2020-12-11 12:48:50.906",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val lines \u003d sc.textFile(\"./notebook/data/book.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:48:58.207",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlines\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ./notebook/data/book.txt MapPartitionsRDD[3] at textFile at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607689146198_1062053328",
+      "id": "paragraph_1607689146198_1062053328",
+      "dateCreated": "2020-12-11 12:19:06.198",
+      "dateStarted": "2020-12-11 12:48:58.239",
+      "dateFinished": "2020-12-11 12:48:59.184",
+      "status": "FINISHED"
+    },
+    {
+      "text": "lines.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:49:01.536",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 1.0 failed 4 times, most recent failure: Lost task 0.3 in stage 1.0 (TID 8, 192.168.0.3, executor 0): java.io.FileNotFoundException: File file:/zeppelin/notebook/data/book.txt does not exist\n\tat org.apache.hadoop.fs.RawLocalFileSystem.deprecatedGetFileStatus(RawLocalFileSystem.java:666)\n\tat org.apache.hadoop.fs.RawLocalFileSystem.getFileLinkStatusInternal(RawLocalFileSystem.java:987)\n\tat org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:656)\n\tat org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:454)\n\tat org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSInputChecker.\u003cinit\u003e(ChecksumFileSystem.java:146)\n\tat org.apache.hadoop.fs.ChecksumFileSystem.open(ChecksumFileSystem.java:347)\n\tat org.apache.hadoop.fs.FileSystem.open(FileSystem.java:899)\n\tat org.apache.hadoop.mapred.LineRecordReader.\u003cinit\u003e(LineRecordReader.java:109)\n\tat org.apache.hadoop.mapred.TextInputFormat.getRecordReader(TextInputFormat.java:67)\n\tat org.apache.spark.rdd.HadoopRDD$$anon$1.liftedTree1$1(HadoopRDD.scala:282)\n\tat org.apache.spark.rdd.HadoopRDD$$anon$1.\u003cinit\u003e(HadoopRDD.scala:281)\n\tat org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:239)\n\tat org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:96)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:127)\n\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n\nDriver stacktrace:\n  at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2059)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2008)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2007)\n  at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)\n  at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2007)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:973)\n  at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:973)\n  at scala.Option.foreach(Option.scala:407)\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:973)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2239)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2188)\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2177)\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:775)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2099)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2120)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2139)\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2164)\n  at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1004)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:388)\n  at org.apache.spark.rdd.RDD.collect(RDD.scala:1003)\n  ... 44 elided\nCaused by: java.io.FileNotFoundException: File file:/zeppelin/notebook/data/book.txt does not exist\n  at org.apache.hadoop.fs.RawLocalFileSystem.deprecatedGetFileStatus(RawLocalFileSystem.java:666)\n  at org.apache.hadoop.fs.RawLocalFileSystem.getFileLinkStatusInternal(RawLocalFileSystem.java:987)\n  at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:656)\n  at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:454)\n  at org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSInputChecker.\u003cinit\u003e(ChecksumFileSystem.java:146)\n  at org.apache.hadoop.fs.ChecksumFileSystem.open(ChecksumFileSystem.java:347)\n  at org.apache.hadoop.fs.FileSystem.open(FileSystem.java:899)\n  at org.apache.hadoop.mapred.LineRecordReader.\u003cinit\u003e(LineRecordReader.java:109)\n  at org.apache.hadoop.mapred.TextInputFormat.getRecordReader(TextInputFormat.java:67)\n  at org.apache.spark.rdd.HadoopRDD$$anon$1.liftedTree1$1(HadoopRDD.scala:282)\n  at org.apache.spark.rdd.HadoopRDD$$anon$1.\u003cinit\u003e(HadoopRDD.scala:281)\n  at org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:239)\n  at org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:96)\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:313)\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\n  at org.apache.spark.scheduler.Task.run(Task.scala:127)\n  at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)\n  at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)\n  ... 3 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://7e6f88d20c72:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607689174743_1562231396",
+      "id": "paragraph_1607689174743_1562231396",
+      "dateCreated": "2020-12-11 12:19:34.743",
+      "dateStarted": "2020-12-11 12:49:01.569",
+      "dateFinished": "2020-12-11 12:49:05.242",
+      "status": "ERROR"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2020-12-11 12:45:13.141",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607689184907_545442749",
+      "id": "paragraph_1607689184907_545442749",
+      "dateCreated": "2020-12-11 12:19:44.908",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "Untitled Note 2",
+  "id": "2FV81TMGJ",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
