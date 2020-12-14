@@ -3,7 +3,7 @@
     {
       "text": "val nums \u003d sc.parallelize(List(1, 2, 3, 4))\n",
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:47:23.925",
+      "dateUpdated": "2020-12-11 13:37:16.166",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -36,14 +36,14 @@
       "jobName": "paragraph_1607688948912_1791218700",
       "id": "paragraph_1607688948912_1791218700",
       "dateCreated": "2020-12-11 12:15:48.914",
-      "dateStarted": "2020-12-11 12:47:23.992",
-      "dateFinished": "2020-12-11 12:48:23.101",
+      "dateStarted": "2020-12-11 13:37:16.193",
+      "dateFinished": "2020-12-11 13:37:17.352",
       "status": "FINISHED"
     },
     {
       "text": "val a \u003d nums.map(x \u003d\u003e x*2)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:48:40.490",
+      "dateUpdated": "2020-12-11 13:37:17.404",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -76,14 +76,14 @@
       "jobName": "paragraph_1607689046857_1188277354",
       "id": "paragraph_1607689046857_1188277354",
       "dateCreated": "2020-12-11 12:17:26.858",
-      "dateStarted": "2020-12-11 12:48:40.539",
-      "dateFinished": "2020-12-11 12:48:41.291",
+      "dateStarted": "2020-12-11 13:37:17.431",
+      "dateFinished": "2020-12-11 13:37:17.915",
       "status": "FINISHED"
     },
     {
       "text": "a.collect()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:48:43.740",
+      "dateUpdated": "2020-12-11 13:37:17.927",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -106,7 +106,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mArray[Int]\u001b[0m \u003d Array(2, 4, 6, 8)\n"
+            "data": "\u001b[1m\u001b[34mres2\u001b[0m: \u001b[1m\u001b[32mArray[Int]\u001b[0m \u003d Array(2, 4, 6, 8)\n"
           }
         ]
       },
@@ -119,7 +119,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://7e6f88d20c72:4040/jobs/job?id\u003d0"
+              "jobUrl": "http://9822bb2531a1:4040/jobs/job?id\u003d0"
             }
           ],
           "interpreterSettingId": "spark"
@@ -129,14 +129,14 @@
       "jobName": "paragraph_1607689102364_1267738087",
       "id": "paragraph_1607689102364_1267738087",
       "dateCreated": "2020-12-11 12:18:22.364",
-      "dateStarted": "2020-12-11 12:48:43.764",
-      "dateFinished": "2020-12-11 12:48:50.906",
+      "dateStarted": "2020-12-11 13:37:17.976",
+      "dateFinished": "2020-12-11 13:37:21.076",
       "status": "FINISHED"
     },
     {
-      "text": "val lines \u003d sc.textFile(\"./notebook/data/book.txt\")",
+      "text": "val lines \u003d sc.textFile(\"/notebook/data/book.txt\")",
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:48:58.207",
+      "dateUpdated": "2020-12-11 13:38:09.061",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -169,14 +169,14 @@
       "jobName": "paragraph_1607689146198_1062053328",
       "id": "paragraph_1607689146198_1062053328",
       "dateCreated": "2020-12-11 12:19:06.198",
-      "dateStarted": "2020-12-11 12:48:58.239",
-      "dateFinished": "2020-12-11 12:48:59.184",
+      "dateStarted": "2020-12-11 13:37:21.128",
+      "dateFinished": "2020-12-11 13:37:21.931",
       "status": "FINISHED"
     },
     {
       "text": "lines.collect()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:49:01.536",
+      "dateUpdated": "2020-12-11 13:37:22.032",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -212,7 +212,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://7e6f88d20c72:4040/jobs/job?id\u003d1"
+              "jobUrl": "http://9822bb2531a1:4040/jobs/job?id\u003d1"
             }
           ],
           "interpreterSettingId": "spark"
@@ -222,13 +222,13 @@
       "jobName": "paragraph_1607689174743_1562231396",
       "id": "paragraph_1607689174743_1562231396",
       "dateCreated": "2020-12-11 12:19:34.743",
-      "dateStarted": "2020-12-11 12:49:01.569",
-      "dateFinished": "2020-12-11 12:49:05.242",
+      "dateStarted": "2020-12-11 13:37:22.061",
+      "dateFinished": "2020-12-11 13:37:23.875",
       "status": "ERROR"
     },
     {
       "user": "anonymous",
-      "dateUpdated": "2020-12-11 12:45:13.141",
+      "dateUpdated": "2020-12-11 13:37:23.965",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -265,5 +265,7 @@
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {}
+  "info": {
+    "isRunning": false
+  }
 }
